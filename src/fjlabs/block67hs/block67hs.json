@@ -1,7 +1,7 @@
 {
   "name": "Block67 Hotswap",
   "vendorId": "0x7074", 
-  "productId": "0x1018",
+  "productId": "0x1021",
   "lighting": "none",
   "matrix": { "rows": 5, "cols": 15 },
   "layouts": {

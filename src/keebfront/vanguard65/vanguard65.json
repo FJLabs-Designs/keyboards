@@ -2,7 +2,107 @@
   "name": "Vanguard65",
   "vendorId": "0x7074", 
   "productId": "0x1823",
-  "menus": [ "qmk_rgblight" ],
+  "menus": [ 
+    {
+      "label": "Lighting",
+      "content": [
+        {
+          "label": "Underglow",
+          "content": [
+            {
+              "label": "Brightness",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgblight_brightness", 2, 1]
+            },
+            {
+              "label": "Effect",
+              "type": "dropdown",
+              "content": ["id_qmk_rgblight_effect", 2, 2],
+              "options": [
+                "All Off",
+                "Solid Color",
+                "Breathing 1",
+                "Breathing 2",
+                "Breathing 3",
+                "Breathing 4",
+                "Rainbow Mood 1",
+                "Rainbow Mood 2",
+                "Rainbow Mood 3",
+                "Rainbow Swirl 1",
+                "Rainbow Swirl 2",
+                "Rainbow Swirl 3",
+                "Rainbow Swirl 4",
+                "Rainbow Swirl 5",
+                "Rainbow Swirl 6",
+                "Snake 1",
+                "Snake 2",
+                "Snake 3",
+                "Snake 4",
+                "Snake 5",
+                "Snake 6",
+                "Knight 1",
+                "Knight 2",
+                "Knight 3",
+                "Christmas",
+                "Gradient 1",
+                "Gradient 2",
+                "Gradient 3",
+                "Gradient 4",
+                "Gradient 5",
+                "Gradient 6",
+                "Gradient 7",
+                "Gradient 8",
+                "Gradient 9",
+                "Gradient 10",
+                "RGB Test",
+                "Alternating",
+                "Twinkle 1",
+                "Twinkle 2",
+                "Twinkle 3",
+                "Twinkle 4",
+                "Twinkle 5",
+                "Twinkle 6"
+              ]
+            },
+            {
+              "showIf": "{id_qmk_rgblight_effect} != 0",
+              "label": "Effect Speed",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgblight_effect_speed", 2, 3]
+            },
+            {
+              "showIf": "{id_qmk_rgblight_effect} != 0 && {id_qmk_rgblight_effect} != 35",
+              "label": "Color",
+              "type": "color",
+              "content": ["id_qmk_rgblight_color", 2, 4]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Slider",
+      "content": [
+        {
+          "label": "General",
+          "content": [
+            {
+              "label": "Function",
+              "type": "dropdown",
+              "options": [
+                ["RGB Brightness", 0],
+                ["MIDI CC 90", 1],
+                ["Layer Shift", 2]
+              ],
+              "content": ["id_slider_func", 0, 1]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "keycodes": [ "qmk_lighting" ],
   "matrix": { "rows": 5, "cols": 15 },
   "layouts": {
@@ -196,9 +296,6 @@
         },
         "4,12",
         "4,13",
-        {
-          "x": 0.25
-        },
         "4,14"
       ],
       [
@@ -229,7 +326,7 @@
       "Split Backspace",
       "Split Left Shift",
       "7U Bottom Row",
-      "ISO ENter"
+      "ISO Enter"
     ]
   }
 }
